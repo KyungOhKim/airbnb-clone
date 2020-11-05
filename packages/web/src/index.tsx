@@ -1,11 +1,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { ApolloProvider } from "react-apollo";
 import reportWebVitals from './reportWebVitals';
+import { client } from "./apollo";
+import { Routes } from "./routes";
 
 ReactDOM.render(
-  <App />,
+  <ApolloProvider client={client}>
+    <Routes />
+  </ApolloProvider>,
   document.getElementById('root') as HTMLElement
 );
 
