@@ -35,3 +35,17 @@ server 디렉토리에 있는 .gitignore와 ormconfig.json을 루트 디렉토�
 packages 디렉토리에서 터미널에 create-react-app web --template typescript 입력
 
 web 디렉토리에서 터미널에 yarn start 입력
+
+# Part 2
+
+web 디렉토리에서 터미널에 yarn start 입력 후 localhost:3000/register에서 register page가 잘 나오는지 확인
+
+# Part 3
+
+Replace text-decoration-skip: ink to text-decoration-skip-ink: auto라는 compile warning이 뜸
+-> airbnb-clone/node_modules/antd/dist/antd.css에서 text-decoration-skip: ink를 text-decoration-skip-ink: auto로 변경
+
+If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles라는 compile warning이 뜸
+-> <a></a> 대신 <Link></Link> 사용
+
+localhost:3000/register에서 email input에 bob, password input에 bob2를 치면 개발자 도구 console에 {email: "bob", password: "bob2"}가 보임
