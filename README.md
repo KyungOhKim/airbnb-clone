@@ -52,5 +52,12 @@ localhost:3000/register에서 email input에 bob, password input에 bob2를 치�
 
 # Part 4
 
-Module not found: Can't resolve '@babel/runtime/helpers/builtin/extends' 에러가 뜸
--> yup 버전을 0.26.2로 변경하여 해결
+web 디렉토리에서 yarn start 했을 때 Module not found: Can't resolve '@babel/runtime/helpers/builtin/extends' 에러가 뜸
+-> web 디렉토리의 yup 버전을 0.26.2로 변경하여 해결
+
+# Part 5
+
+common 디렉토리에서 yarn build 하여 dist 디렉토리 생성됨
+
+web 디렉토리에서 yarn start 했을 때 Module not found: Can't resolve '@babel/runtime/helpers/builtin/extends' 에러가 뜸
+-> common 디렉토리의 yup 버전을 0.26.2로 변경하여 해결
