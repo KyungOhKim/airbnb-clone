@@ -49,3 +49,8 @@ If you cannot provide a valid href, but still need the element to resemble a lin
 -> <a></a> 대신 <Link></Link> 사용
 
 localhost:3000/register에서 email input에 bob, password input에 bob2를 치면 개발자 도구 console에 {email: "bob", password: "bob2"}가 보임
+
+# Part 4
+
+Module not found: Can't resolve '@babel/runtime/helpers/builtin/extends' 에러가 뜸
+-> yup 버전을 0.26.2로 변경하여 해결
