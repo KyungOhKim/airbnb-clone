@@ -61,3 +61,8 @@ common 디렉토리에서 yarn build 하여 dist 디렉토리 생성됨
 
 web 디렉토리에서 yarn start 했을 때 Module not found: Can't resolve '@babel/runtime/helpers/builtin/extends' 에러가 뜸
 -> common 디렉토리의 yup 버전을 0.26.2로 변경하여 해결
+
+# Part 6
+
+web 디렉토리에서 yarn start 했을 때 Type 'StatelessComponent<FieldProps<any> & { prefix: ReactNode; }>' is not assignable to type 'string | ComponentClass<FieldProps<any>, any> | FunctionComponent<FieldProps<any>> | ComponentCla...'. 에러가 뜸
+-> component={InputField}를 component={InputField as any}로 변경
