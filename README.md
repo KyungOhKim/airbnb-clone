@@ -70,3 +70,38 @@ web 디렉토리에서 yarn start 했을 때 Type 'StatelessComponent<FieldProps
 # Part 7
 
 controller 디렉토리에서 yarn build 하여 dist 디렉토리 생성됨
+
+# Part 8
+
+루트 디렉토리에서 redis-server 실행
+
+server 디렉토리에서 .env 파일 생성
+
+SPARKPOST_API_KEY=sparkpost에서 sign up하고 만든 api key
+FRONTEND_HOST=yarn start하여 React를 실행하는 url
+
+server 디렉토리에서 yarn start 했을 때 error: "password" 열에는 null 값 자료가 있습니다
+-> DB에 password가 null인 user 데이터 삭제 후 yarn start하여 해결
+
+yarn start 후 localhost:4000에서
+
+mutation {
+register(
+email: "10minutemail.net/?lang=ko에서 생성된 메일 주소",
+password: "임의의 password"
+) {
+path
+message
+}
+}
+
+response가 아래처럼 나오면서 user 생성됨
+{
+"data": {
+"register": null
+}
+}
+
+packages/controller/src/modules/RegisterController/index.tsx 수정 후 controller 디렉토리 terminal에서 yarn build 입력
+
+web 디렉토리에서 yarn start하여 localhost:3000/register로 이동 -> https://10minutemail.net/?lang=ko 에 나오는 임의의 email과 password 입력하고 Register 버튼 누르면 response로 data 객체 리턴됨(user가 생성됨) -> https://10minutemail.net/?lang=ko 로 메일이 오는 것을 확인하고 confirm email을 클릭하면 페이지 이동 후 ok가 보임
