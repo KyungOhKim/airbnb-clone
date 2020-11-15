@@ -105,3 +105,13 @@ response가 아래처럼 나오면서 user 생성됨
 packages/controller/src/modules/RegisterController/index.tsx 수정 후 controller 디렉토리 terminal에서 yarn build 입력
 
 web 디렉토리에서 yarn start하여 localhost:3000/register로 이동 -> https://10minutemail.net/?lang=ko 에 나오는 임의의 email과 password 입력하고 Register 버튼 누르면 response로 data 객체 리턴됨(user가 생성됨) -> https://10minutemail.net/?lang=ko 로 메일이 오는 것을 확인하고 confirm email을 클릭하면 페이지 이동 후 ok가 보임
+
+# Part 9
+
+루트 디렉토리에서 redis-server를 실행하고 server 디렉토리에서 yarn start한 후 controller 디렉토리에서 terminal에 yarn global add apollo-codegen@0.19.1 입력
+
+yarn add apollo-codegen@0.19.1 --dev하고 controller 디렉토리에서 terminal에 apollo-codegen introspect-schema http://localhost:4000 --output schema.json을 입력하면 schema.json 파일 생성됨
+
+controller 디렉토리의 src/modules/RegisterController/index.tsx에서 mutation 이름을 RegisterMutation로 추가한 후 terminal에 apollo-codegen generate src/\*_/_.tsx --schema schema.json --target ts-modern을 입력하면 src/modules/RegisterController/**generated** 디렉토리에 RegisterMutation.ts 파일이 생성됨
+
+controller 디렉토리의 package.json에 scripts를 추가하여 yarn gen-types를 입력했을 때 apollo-codegen이 introspect-schema와 generate를 잘 하는지 확인
