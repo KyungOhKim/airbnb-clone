@@ -115,3 +115,18 @@ yarn add apollo-codegen@0.19.1 --dev하고 controller 디렉토리에서 termina
 controller 디렉토리의 src/modules/RegisterController/index.tsx에서 mutation 이름을 RegisterMutation로 추가한 후 terminal에 apollo-codegen generate src/\*_/_.tsx --schema schema.json --target ts-modern을 입력하면 src/modules/RegisterController/**generated** 디렉토리에 RegisterMutation.ts 파일이 생성됨
 
 controller 디렉토리의 package.json에 scripts를 추가하여 yarn gen-types를 입력했을 때 apollo-codegen이 introspect-schema와 generate를 잘 하는지 확인
+
+# Part 10
+
+server 디렉토리에서 yarn build 실행하여 dist 디렉토리 생성됨
+
+copyfiles src/\*_/_.graphql dist하여 dist/modules 디렉토리에 스키마 파일 복사
+
+docker 설치: https://docs.docker.com/docker-for-windows/install-windows-home/
+https://meaownworld.tistory.com/156
+
+루트 디렉토리에 Dockerfile과 .dockerignore 작성 후 docker build -t kyungohkim/airbnb-clone:1.0.0 . 실행
+
+Remove the existing file and try again, or run npm with --force to overwrite files recklessly 에러 -> Dockerfile의 RUN npm i -g yarn에 --force 추가
+
+루트 디렉토리 터미널에서 docker run -p 3001:4000 --net="host" -d kyungohkim/airbnb-clone:1.0.0 실행
