@@ -196,3 +196,27 @@ root@airbnb-clone:~#에 dokku logs airbnb-clone 입력
 root@airbnb-clone:~#에 dokku proxy:ports airbnb-clone 입력
 
 root@airbnb-clone:~#에 dokku proxy:ports-add airbnb-clone http:80:4000 입력
+
+root@airbnb-clone:~#에 dokku tags:deploy airbnb-clone latest 입력하여 배포된 url을 크롬 창에 입력
+
+# Part 12
+
+루트 디렉토리 터미널에 yarn global add lerna@2.11.0 입력
+
+루트 디렉토리 터미널에 lerna init 입력
+
+server 디렉토리 터미널에 yarn build 입력
+
+common 디렉토리 터미널에 yarn build 입력
+
+루트 디렉토리 터미널에 yarn build:server 입력
+
+루트 디렉토리 터미널에 chmod +x deploy.sh 입력
+
+루트 디렉토리 터미널에 mv deploy.sh deploy_server_do 입력
+
+루트 디렉토리 터미널에 mv deploy_server_do deploy_server_do.sh 입력
+
+루트 디렉토리 터미널에 ./deploy_server_do.sh 입력
+
+배포된 url을 크롬 창에 입력
