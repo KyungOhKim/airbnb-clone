@@ -20,7 +20,7 @@ A Fullstack GraphQL Airbnb Clone with React and React Native
 
 # Part 1
 
-packages 디렉토리에서 터미널에 git clone https://github.com/KyungOhKim/airbnb-graphql.git server 입력
+packages 디렉토리에서 터미널에 git clone https://github.com/kko0831/airbnb-graphql.git server 입력
 
 server 디렉토리에서 터미널에 rm -rf .git 입력
 
@@ -125,8 +125,74 @@ copyfiles src/\*_/_.graphql dist하여 dist/modules 디렉토리에 스키마 �
 docker 설치: https://docs.docker.com/docker-for-windows/install-windows-home/
 https://meaownworld.tistory.com/156
 
-루트 디렉토리에 Dockerfile과 .dockerignore 작성 후 docker build -t kyungohkim/airbnb-clone:1.0.0 . 실행
+루트 디렉토리에 Dockerfile과 .dockerignore 작성 후 docker build -t kko0831/airbnb-clone:1.0.0 . 실행
 
 Remove the existing file and try again, or run npm with --force to overwrite files recklessly 에러 -> Dockerfile의 RUN npm i -g yarn에 --force 추가
 
-루트 디렉토리 터미널에서 docker run -p 3001:4000 --net="host" -d kyungohkim/airbnb-clone:1.0.0 실행
+루트 디렉토리 터미널에서 docker run -p 3001:4000 --net="host" -d kko0831/airbnb-clone:1.0.0 실행
+
+# Part 11
+
+digitalocean에 sign up함
+
+dokku로 create droplets함
+
+droplet 이름 옆에 있는 ip 주소 복사해서 크롬에서 염
+
+루트 디렉토리 터미널에서 ssh root@droplet 이름 옆에 있는 ip 주소 입력
+
+SSH 키를 설정하는 방법
+https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-2
+
+root@airbnb-clone:~#에 dokku apps:create airbnb-clone 입력
+
+root@airbnb-clone:~#에 sudo dokku plugin:install https://github.com/dokku/dokku-postgres.git postgres 입력
+
+root@airbnb-clone:~#에 dokku postgres:create pg 입력
+
+root@airbnb-clone:~#에 dokku postgres:link pg airbnb-clone 입력
+
+root@airbnb-clone:~#에 sudo dokku plugin:install https://github.com/dokku/dokku-redis.git redis 입력
+
+root@airbnb-clone:~#에 dokku redis:create red 입력
+
+root@airbnb-clone:~#에 dokku redis:link red airbnb-clone 입력
+
+root@airbnb-clone:~#에 exit를 입력하여 logout 함
+
+루트 디렉토리에서 docker build -t kko0831/airbnb-clone:1.0.0 . 실행
+
+https://hub.docker.com에서 docker hub 생성하고 터미널에 docker login 입력하여 로그인
+
+루트 디렉토리에서 docker push kko0831/airbnb-clone:1.0.0 입력
+
+루트 디렉토리 터미널에서 ssh root@droplet 이름 옆에 있는 ip 주소 입력
+
+root@airbnb-clone:~#에 docker pull kko0831/airbnb-clone:1.0.0 입력
+
+root@airbnb-clone:~#에 docker tag kko0831/airbnb-clone:1.0.0 dokku/airbnb-clone:latest 입력
+
+root@airbnb-clone:~#에 dokku tags:deploy airbnb-clone latest 입력
+
+server 디렉토리에서 yarn build 하고 루트 디렉토리에서 docker build -t kko0831/airbnb-clone:1.0.0 . 입력
+
+루트 디렉토리에서 docker push kko0831/airbnb-clone:1.0.0 입력
+
+루트 디렉토리 터미널에서 ssh root@droplet 이름 옆에 있는 ip 주소 입력
+
+root@airbnb-clone:~#에 docker tag kko0831/airbnb-clone:1.0.0 dokku/airbnb-clone:latest 입력
+
+root@airbnb-clone:~#에 docker pull kko0831/airbnb-clone:1.0.0 입력
+
+root@airbnb-clone:~#에 docker tag kko0831/airbnb-clone:1.0.0 dokku/airbnb-clone:latest 입력
+
+root@airbnb-clone:~#에 dokku tags:deploy airbnb-clone latest 입력
+
+The following variables were defined in .env.example but are not present in the environment 에러 발생
+-> server 디렉토리의 .env와 .env.prod에 FRONTEND_HOST=http://localhost:3000로 수정하여 해결
+
+root@airbnb-clone:~#에 dokku logs airbnb-clone 입력
+
+root@airbnb-clone:~#에 dokku proxy:ports airbnb-clone 입력
+
+root@airbnb-clone:~#에 dokku proxy:ports-add airbnb-clone http:80:4000 입력
