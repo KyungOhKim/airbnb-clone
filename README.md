@@ -220,3 +220,21 @@ common 디렉토리 터미널에 yarn build 입력
 루트 디렉토리 터미널에 ./deploy_server_do.sh 입력
 
 배포된 url을 크롬 창에 입력
+
+# Part 13
+
+루트 디렉토리 터미널에 yarn global add heroku 입력
+
+루트 디렉토리 터미널에 heroku login 입력
+
+루트 디렉토리 터미널에 heroku container:login 입력
+
+루트 디렉토리 터미널에 heroku create 입력
+
+https://elements.heroku.com/addons에서 postgres를 검색하여 heroku postgres를 선택하여 설치
+
+https://elements.heroku.com/addons에서 redis를 검색하여 heroku redis를 선택하여 설치
+
+settings에 가서 app name 확인
+
+루트 디렉토리 터미널에 ./deploy_server_do.sh 입력
