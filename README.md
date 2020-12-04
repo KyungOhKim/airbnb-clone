@@ -238,3 +238,19 @@ https://elements.heroku.com/addons에서 redis를 검색하여 heroku redis를 �
 settings에 가서 app name 확인
 
 루트 디렉토리 터미널에 ./deploy_server_do.sh 입력
+
+# Part 14
+
+루트 디렉토리 터미널에 yarn global add netlify-cli 입력
+
+루트 디렉토리 터미널에 netlify init 입력
+
+루트 디렉토리 터미널에 yarn build:web 입력
+
+루트 디렉토리 터미널에 netlify deploy 입력
+
+루트 디렉토리 터미널에 chmod +x deploy_web.sh 입력
+
+루트 디렉토리 터미널에 ./deploy_web.sh 입력
+
+server 디렉토리의 .env 파일의 FRONTEND_HOST에 배포된 url 추가
