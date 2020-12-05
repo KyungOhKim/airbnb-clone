@@ -10,7 +10,11 @@
     ],
     "nohoist": [
       "**/rimraf",
-      "**/rimraf/**"
+      "**/rimraf/**",
+      "**/react-native",
+      "**/react-native/**",
+      "**/expo",
+      "**/expo/**"
     ]
   },
   "devDependencies": {

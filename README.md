@@ -254,3 +254,23 @@ settings에 가서 app name 확인
 루트 디렉토리 터미널에 ./deploy_web.sh 입력
 
 server 디렉토리의 .env 파일의 FRONTEND_HOST에 배포된 url 추가
+
+# Part 15
+
+packages 디렉토리 터미널에 git clone https://github.com/benawad/typescript-yarn-workspace-example.git 입력
+
+packages 디렉토리 터미널에 cd typescript-yarn-workspace-example 입력
+
+typescript-yarn-workspace-example 디렉토리 터미널에 git checkout 1_add_ts_rn 입력
+
+typescript-yarn-workspace-example/packages 디렉토리에 있는 app 폴더를 airbnb-clone/packages 디렉토리로 이동
+
+typescript-yarn-workspace-example 디렉토리 삭제
+
+packages/app 디렉토리에서 yarn.lock 삭제
+
+packages/app 디렉토리에서 yarn install 입력
+
+_|website\\node_modules\\._|heapCapture\\bundle\.js|._
+\\**tests**\\._)\$/: Unterminated character class 에러 발생
+-> packages/app 디렉토리의 node_modules\metro-config\src\defaults\blacklist.js에서 sharedBlacklist를 /node_modules[\/\\]react[\/\\]dist[\/\\].\*/로 수정하여 해결
