@@ -274,3 +274,13 @@ packages/app 디렉토리에서 yarn install 입력
 _|website\\node_modules\\._|heapCapture\\bundle\.js|._
 \\**tests**\\._)\$/: Unterminated character class 에러 발생
 -> packages/app 디렉토리의 node_modules\metro-config\src\defaults\blacklist.js에서 sharedBlacklist를 /node_modules[\/\\]react[\/\\]dist[\/\\].\*/로 수정하여 해결
+
+# Part 16
+
+packages/app 디렉토리에서 yarn add react-router-native@4.3.0 react-native-elements@0.19.1 apollo-client@2.3.5 apollo-cache-inmemory@1.2.5 apollo-link-http@1.5.4 graphql@0.13.2 입력
+
+packages/app 디렉토리에서 yarn add react-apollo@2.1.7 graphql-tag@2.9.2 입력
+
+packages/app 디렉토리에서 yarn add @types/react-native-elements@0.18.0 @types/react-router-native@4.2.3 --dev 입력
+
+packages/app 디렉토리에서 rm -rf node_modules/ ../../node_modules/ 입력 후 yarn install 입력
