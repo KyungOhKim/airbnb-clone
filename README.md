@@ -292,3 +292,22 @@ packages/app 디렉토리에서 yarn add formik@0.11.11 입력
 packages/app 디렉토리에서 yarn remove @types/react-native-elements 입력
 
 packages/app 디렉토리에서 yarn add react-native-elements@1.0.0-beta5 입력
+
+# Part 19
+
+packages/controller 디렉토리에서 yarn add apollo@1.1.1 --dev 입력
+
+packages/controller 디렉토리에서 yarn global add apollo@1.1.1 입력
+
+packages/server 디렉토리에서 yarn start 입력
+
+packages/controller 디렉토리에서 yarn schema:download 입력하면 packages/controller 디렉토리에 schema.json 파일 생성됨
+
+packages/controller 디렉토리에서 apollo codegen:generate --queries="./src/\*_/_.tsx" --schema=./schema.json --target=typescript ./src/schem
+aTypes.ts 입력하면 packages/controller/src 디렉토리에 schemaTypes.ts 파일 생성됨
+
+packages/controller 디렉토리에서 yarn gen:types 입력
+
+packages/controller 디렉토리에서 yarn refresh:types 입력
+
+packages/server 디렉토리에서 package.json 파일을 수정하여 yarn test 입력
