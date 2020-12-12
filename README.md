@@ -284,3 +284,11 @@ packages/app 디렉토리에서 yarn add react-apollo@2.1.7 graphql-tag@2.9.2 �
 packages/app 디렉토리에서 yarn add @types/react-native-elements@0.18.0 @types/react-router-native@4.2.3 --dev 입력
 
 packages/app 디렉토리에서 rm -rf node_modules/ ../../node_modules/ 입력 후 yarn install 입력
+
+# Part 17
+
+packages/app 디렉토리에서 yarn add formik@0.11.11 입력
+
+packages/app 디렉토리에서 yarn remove @types/react-native-elements 입력
+
+packages/app 디렉토리에서 yarn add react-native-elements@1.0.0-beta5 입력
