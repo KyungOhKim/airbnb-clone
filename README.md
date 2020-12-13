@@ -311,3 +311,19 @@ packages/controller 디렉토리에서 yarn gen:types 입력
 packages/controller 디렉토리에서 yarn refresh:types 입력
 
 packages/server 디렉토리에서 package.json 파일을 수정하여 yarn test 입력
+
+# Part 20
+
+packages/common 디렉토리에서 yarn build 입력
+
+packages/server 디렉토리에서 yarn start 입력
+
+packages/controller 디렉토리에서 yarn gen:types 입력
+
+packages/controller 디렉토리에서 yarn build 입력
+
+packages/web 디렉토리에서 yarn start 입력
+
+localhost:3000/register에서 https://10minutemail.net/?lang=ko에서 생성된 이메일로 사용자 register함
+
+localhost:3000/login에서 https://10minutemail.net/?lang=ko에서 생성된 이메일로 사용자 login함
