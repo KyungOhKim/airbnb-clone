@@ -327,3 +327,13 @@ packages/web 디렉토리에서 yarn start 입력
 localhost:3000/register에서 https://10minutemail.net/?lang=ko에서 생성된 이메일로 사용자 register함
 
 localhost:3000/login에서 https://10minutemail.net/?lang=ko에서 생성된 이메일로 사용자 login함
+
+# Part 22
+
+packages/controller 디렉토리에서 yarn build 입력
+
+packages/controller 디렉토리에서 yarn gen:types 입력
+
+packages/controller 디렉토리에서 yarn build 입력
+
+localhost:3000/register에서 임의의 사용자를 생성하고 localhost:3000/login에서 login하면 response로 sessionId가 출력
